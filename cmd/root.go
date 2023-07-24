@@ -10,7 +10,6 @@ var rootCmd = &cobra.Command{
 	Use:   "cherry",
 	Short: "A collection of command line tools",
 	Long: `A collection of command line tools:
-
 Get some information.
 This application use Cobra application to create.`,
 	// Uncomment the following line if your bare application
