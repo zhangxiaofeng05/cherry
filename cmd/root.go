@@ -1,11 +1,8 @@
 package cmd
 
 import (
-	"fmt"
-	"os"
-	"strings"
-
 	"github.com/spf13/cobra"
+	"log"
 )
 
 // rootCmd represents the base command when called without any subcommands
@@ -19,8 +16,7 @@ This application use Cobra application to create.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("root called")
-		fmt.Printf("args: %v \n", strings.Join(args, ","))
+		log.Println("root called")
 	},
 }
 
@@ -29,6 +25,6 @@ This application use Cobra application to create.`,
 func Execute() {
 	err := rootCmd.Execute()
 	if err != nil {
-		os.Exit(1)
+		log.Fatal(err)
 	}
 }

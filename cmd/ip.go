@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"fmt"
 	"github.com/spf13/cobra"
 	"io"
+	"log"
 	"net/http"
 )
 
@@ -13,25 +13,26 @@ var ipCmd = &cobra.Command{
 	Short: "get ip information",
 	Long: `A command line tool for get ip
 
+website: https://ipw.cn
 IP查询 IPv4.IPv6`,
 	Run: func(cmd *cobra.Command, args []string) {
-		url := "http://test.ipw.cn/"
+		url := "https://test.ipw.cn/"
 		if ipv4 != nil && *ipv4 {
-			url = "http://4.ipw.cn/"
+			url = "https://4.ipw.cn/"
 		}
 		if ipv6 != nil && *ipv6 {
-			url = "http://6.ipw.cn/"
+			url = "https://6.ipw.cn/"
 		}
 		resp, err := http.Get(url)
 		if err != nil {
-			panic(err)
+			log.Fatal(err)
 		}
 		defer resp.Body.Close()
 		bytes, err := io.ReadAll(resp.Body)
 		if err != nil {
-			panic(err)
+			log.Fatal(err)
 		}
-		fmt.Println(string(bytes))
+		log.Println(string(bytes))
 	},
 }
 
