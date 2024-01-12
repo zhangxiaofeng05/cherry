@@ -27,3 +27,9 @@ func Execute() {
 		log.Fatal(err)
 	}
 }
+
+func init() {
+	rootCmd.AddCommand(timeCmd)
+	rootCmd.AddCommand(ipCmd)
+	rootCmd.AddCommand(sqlCmd)
+}

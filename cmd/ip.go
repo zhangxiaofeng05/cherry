@@ -12,17 +12,22 @@ var ipCmd = &cobra.Command{
 	Use:   "ip",
 	Short: "get ip information",
 	Long: `A command line tool for get ip
-website: https://ipw.cn
+website: https://ip.sb
 IP查询 IPv4.IPv6`,
 	Run: func(cmd *cobra.Command, args []string) {
-		url := "https://test.ipw.cn/"
+		url := "https://api.ip.sb/ip"
 		if ipv4 {
-			url = "https://4.ipw.cn/"
+			url = "https://api-ipv4.ip.sb/ip"
 		}
 		if ipv6 {
-			url = "https://6.ipw.cn/"
+			url = "https://api-ipv6.ip.sb/ip"
 		}
-		resp, err := http.Get(url)
+		req, err := http.NewRequest(http.MethodGet, url, nil)
+		if err != nil {
+			log.Fatal(err)
+		}
+		req.Header.Add("User-Agent", "Mozilla")
+		resp, err := http.DefaultClient.Do(req)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -41,8 +46,6 @@ var (
 )
 
 func init() {
-	rootCmd.AddCommand(ipCmd)
-
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

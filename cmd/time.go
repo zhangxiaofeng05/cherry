@@ -15,10 +15,6 @@ var timeCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(timeCmd)
-}
-
-func init() {
 	timeCmd.AddCommand(time.NowTimeCmd)
 	timeCmd.AddCommand(time.IntervalTimeCalcCmd)
 }
