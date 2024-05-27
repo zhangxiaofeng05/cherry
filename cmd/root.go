@@ -32,4 +32,5 @@ func init() {
 	rootCmd.AddCommand(timeCmd)
 	rootCmd.AddCommand(ipCmd)
 	rootCmd.AddCommand(sqlCmd)
+	rootCmd.AddCommand(uuidCmd)
 }
