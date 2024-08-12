@@ -1,8 +1,9 @@
 package cmd
 
 import (
-	"github.com/spf13/cobra"
 	"log"
+
+	"github.com/spf13/cobra"
 )
 
 // rootCmd represents the base command when called without any subcommands
@@ -33,4 +34,5 @@ func init() {
 	rootCmd.AddCommand(ipCmd)
 	rootCmd.AddCommand(sqlCmd)
 	rootCmd.AddCommand(uuidCmd)
+	rootCmd.AddCommand(urlCmd)
 }
