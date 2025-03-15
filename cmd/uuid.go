@@ -1,9 +1,10 @@
 package cmd
 
 import (
+	"log"
+
 	"github.com/google/uuid"
 	"github.com/spf13/cobra"
-	"log"
 )
 
 var uuidCmd = &cobra.Command{

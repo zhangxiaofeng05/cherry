@@ -1,9 +1,10 @@
 package time
 
 import (
-	"github.com/spf13/cobra"
 	"log"
 	"time"
+
+	"github.com/spf13/cobra"
 )
 
 var startTimeStr, endTimeStr string

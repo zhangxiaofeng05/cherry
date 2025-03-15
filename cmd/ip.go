@@ -1,10 +1,11 @@
 package cmd
 
 import (
-	"github.com/spf13/cobra"
 	"io"
 	"log"
 	"net/http"
+
+	"github.com/spf13/cobra"
 )
 
 // ipCmd represents the ip command

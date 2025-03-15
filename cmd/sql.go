@@ -1,10 +1,10 @@
 package cmd
 
 import (
-	"github.com/zhangxiaofeng05/cherry/internal/sql2struct"
 	"log"
 
 	"github.com/spf13/cobra"
+	"github.com/zhangxiaofeng05/cherry/internal/sql2struct"
 )
 
 var username string

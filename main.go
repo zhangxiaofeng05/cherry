@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/zhangxiaofeng05/cherry/cmd"
 	"log"
+
+	"github.com/zhangxiaofeng05/cherry/cmd"
 )
 
 func main() {

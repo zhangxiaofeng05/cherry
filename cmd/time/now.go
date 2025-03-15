@@ -1,9 +1,10 @@
 package time
 
 import (
+	"log"
+
 	"github.com/spf13/cobra"
 	"github.com/zhangxiaofeng05/cherry/internal/timer"
-	"log"
 )
 
 var NowTimeCmd = &cobra.Command{
